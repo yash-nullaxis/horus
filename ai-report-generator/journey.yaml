@@ -1,0 +1,118 @@
+title: "Network Strategy Dashboard — Connectivity Analysis Report"
+app_url: "http://localhost:8085/"
+
+login:
+  username_selector: "input#username"
+  password_selector: "input#password"
+  submit_selector: "button[type='submit']"
+  username: "admin"
+  password: "#Nullaxis93820"
+  wait_after_login: 10000
+
+ai:
+  model: "gemini-2.5-flash"
+  system_prompt: |
+    You are a senior airline network strategy analyst reviewing a competitive intelligence dashboard.
+    Your audience is the Chief Network Officer and VP of Strategy.
+
+    When analyzing a chart or dashboard view:
+    1. Describe exactly what you see — chart type, axes, data series, labels.
+    2. Extract key numerical values visible in the chart.
+    3. Identify competitive insights — who leads, who is gaining/losing, gaps and opportunities.
+    4. Note any anomalies or data quality concerns.
+    5. Provide one actionable recommendation based on what you see.
+
+    Be precise with numbers. Use airline codes (6E = IndiGo, AI = Air India, IX = Air India Express).
+    Keep each analysis to 3-5 concise paragraphs.
+
+steps:
+  # ─── 1. Navigate to Key Insights ────────────────────────────────────
+  - name: "Navigate to Key Insights"
+    actions:
+      - tapOn: "Key Insights"
+      - waitUntilStatic: 30000
+    capture: full_page
+    prompt: |
+      This is the Key Insights landing page. Briefly describe what tabs/sub-tabs
+      are available and what the default view shows.
+
+  # ─── 2. Click Connectivity sub-tab ──────────────────────────────────
+  - name: "Connectivity — Airport Level Hub Performance"
+    actions:
+      - tapOn: "Connectivity"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze this connectivity dashboard at the Airport Level. Focus on:
+      - Top connecting airports by PPDEW (Passengers Per Day Each Way)
+      - Hub strengths and weaknesses for Air India Group vs IndiGo
+      - Any AI-generated insights visible on the page
+      - Which airports drive the most connectivity value
+
+  # ─── 3. Scroll down to see PPDEW chart details ──────────────────────
+  - name: "Connectivity — Airport Level PPDEW Details"
+    actions:
+      - scrollIntoView: "Top Connecting Airports by PPDEW"
+      - waitUntilStatic: 30000
+    capture: full_page
+    prompt: |
+      Analyze the PPDEW (Passengers Per Day Each Way) chart in detail. Focus on:
+      - The specific airport codes and their PPDEW values for both airline groups
+      - Which airports show the strongest hub connectivity
+      - Compare AIG Group vs 6E Group connectivity at each airport
+      - Identify airports where one group dominates vs the other
+
+  # ─── 4. Scroll to Connection Opportunities ──────────────────────────
+  - name: "Connectivity — Airport Level Connection Opportunities"
+    actions:
+      - scrollToBottom: true
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the connection opportunities section at the Airport Level. Focus on:
+      - Underserved routes or connection gaps between airline groups
+      - The hourly distribution of inbound connections per departure hour
+      - Average daily connection counts for Air India Group vs IndiGo
+      - Revenue potential of untapped or underserved connections
+      - Any visible filter settings (connection window, month)
+
+  # ─── 5. Switch to OD Pairs Sub-tab ──────────────────────────────────
+  - name: "Connectivity — OD Pairs Overview"
+    actions:
+      - scrollToTop: true
+      - tapOn: "OD Pairs"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the Connectivity dashboard switched to the "OD Pairs" view. Focus on:
+      - What metrics and visualizations are displayed on this sub-tab (e.g. key O&D connecting markets, flow analysis)
+      - The core comparison between Air India Group (AIG) and IndiGo (6E Group) for key O&D pairs
+      - Major city pairs driving the connection volumes and yield
+      - Any visible data loading or styling anomalies
+
+  # ─── 6. Scroll down to see OD Pairs details ─────────────────────────
+  - name: "Connectivity — OD Pairs Table & Details"
+    actions:
+      - scrollToBottom: true
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the detailed tables or charts at the bottom of the "OD Pairs" view. Focus on:
+      - Specific city-pair connections, passenger counts, and average connection windows
+      - Competitive routing comparison: who has better times, shorter layovers, or higher capacity
+      - Strategic recommendations for key city pairs to optimize scheduling or capacity
+
+# ─── Executive Summary ─────────────────────────────────────────────
+executive_summary:
+  enabled: true
+  prompt: |
+    Based on all the analyses of the Connectivity tab above (covering both AIRPORT LEVEL and OD PAIRS sub-tabs),
+    write a focused executive briefing for the Chief Network Officer. Structure it as:
+
+    1. **Hub Connectivity Position**: How does AIG's connectivity compare to 6E at the airport level?
+    2. **Top Performing Hubs**: Which airports deliver the most connectivity value for each group?
+    3. **Key O&D Market Flows**: What are the critical City-Pairs where AIG dominates or lags competitors?
+    4. **Underserved Connection Opportunities**: Where are the schedule gaps or untapped routing markets?
+    5. **Strategic Recommendations**: Top 3 actionable recommendations to improve AIG's connectivity yield.
+
+    Keep it concise — maximum 450 words. Use specific numbers, city-pairs, and airport codes from the analyses.

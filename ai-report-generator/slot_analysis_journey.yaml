@@ -1,0 +1,227 @@
+title: "Network Strategy Dashboard — Slot Analysis Report (DEL vs BOM)"
+app_url: "http://localhost:8085/"
+
+login:
+  username_selector: "input#username"
+  password_selector: "input#password"
+  submit_selector: "button[type='submit']"
+  username: "admin"
+  password: "#Nullaxis93820"
+  wait_after_login: 10000
+
+ai:
+  model: "gemini-2.5-flash"
+  system_prompt: |
+    You are a senior airline network strategy analyst reviewing the Slot & Banking Analysis
+    dashboard of the Network Strategy Analysis tool.
+    Your audience is the Chief Network Officer and VP of Strategy.
+
+    When analyzing a chart or dashboard view:
+    1. Describe exactly what you see — chart type, axes, data series, labels, any filter settings.
+    2. Extract ALL key numerical values visible (flight counts, seat counts, slot share %s, KPIs).
+    3. Identify competitive insights — AIG vs IndiGo (6E) slot dominance, gaps, and opportunities.
+    4. Note any anomalies, empty charts, or data quality concerns.
+    5. Provide one actionable recommendation based on what you see.
+
+    Be precise with numbers. Use airline codes (6E = IndiGo, AI = Air India, IX = Air India Express).
+    When comparing filtered vs unfiltered views, focus on what changed and what the delta means.
+
+steps:
+  # ═══════════════════════════════════════════════════════════════════
+  # PHASE 1: DEFAULT VIEW — DELHI (DEL), November 2025, All Tiers
+  # ═══════════════════════════════════════════════════════════════════
+
+  # ─── 1. Navigate to Slot Analysis ──────────────────────────────────
+  - name: "Navigate to Slot Analysis (Default: DEL)"
+    actions:
+      - tapOn: "Key Insights"
+      - waitUntilStatic: 10000
+      - tapOn: "Slot Analysis"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      This is the Slot Analysis tab with DEFAULT filters.
+      Describe all visible filter settings on the left sidebar (Airline, Haul Tier, Region, Airport,
+      Direction, Month, Aircraft Clusters, Secondary Clusters).
+      Also extract the KPI cards at the top (Total Flights, Total Seats, Busiest Bin,
+      Avg Block Time, Avg Stage Length) with their sub-breakdowns for AI and IX.
+
+  # ─── 2. Slot Usage by Daypart (DEL) ──────────────────────────────
+  - name: "DEL — Slot Usage by Daypart"
+    actions:
+      - scrollIntoView: "Slot Usage by Daypart"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the "Slot Usage by Daypart" chart for Delhi (DEL). Focus on:
+      - Distribution of flights across daypart windows (Early Morning, AM Peak, Midday, etc.)
+      - AIG's share vs IndiGo's share in each daypart
+      - Which daypart is most congested and where AIG has competitive advantages
+      - Extract all numerical values visible (flight counts, percentages)
+
+  # ─── 3. Daily Slot Share (Hourly) for DEL ────────────────────────
+  - name: "DEL — Daily Slot Share (Hourly)"
+    actions:
+      - scrollIntoView: "Daily Slot Share (Hourly)"
+      - waitUntilStatic: 30000
+    capture: full_page
+    prompt: |
+      Analyze the "Daily Slot Share (Hourly)" chart for DEL. Focus on:
+      - AIG Share vs IndiGo Share percentages across each hour (00:00 to 23:00)
+      - Hours where AIG dominates vs hours where IndiGo dominates
+      - The overall competitive balance — does either airline have a clear scheduling advantage?
+      - Peak and off-peak slot utilization patterns
+
+  # ─── 4. Connected Airports (Destinations) from DEL ───────────────
+  - name: "DEL — Connected Airports & Destinations"
+    actions:
+      - scrollIntoView: "Connected Airports"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the "Connected Airports (Destinations)" table for DEL. Focus on:
+      - Top 15 destinations by flight frequency
+      - Which destinations are AIG-dominant vs IndiGo-dominant
+      - Key international vs domestic connectivity from DEL
+      - Any surprising route gaps or low-frequency destinations
+
+  # ─── 5. Flight Distribution across Airports (DEL) ────────────────
+  - name: "DEL — Flight Distribution vs 6E"
+    actions:
+      - scrollIntoView: "Flight Distribution across Airports"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the "Flight Distribution across Airports (vs 6E)" chart. Focus on:
+      - Comparative flight volumes at each airport (DEL, BOM, BLR, HYD, CCU, MAA, etc.)
+      - Where AIG leads vs where IndiGo leads in flight count
+      - The competitive ratio between AIG and 6E at each airport
+      - Extract all visible numerical values
+
+  # ─── 6. Slot Pressure / Route Comparison (DEL) ───────────────────
+  - name: "DEL — Slot Pressure vs 6E (Route Level)"
+    actions:
+      - scrollIntoView: "Pressure at slot-constrained airports"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the "Pressure at slot-constrained airports: 6E comparison on route level" chart.
+      Focus on:
+      - Comparing slot distribution for top 20 routes by volume from Delhi (DEL)
+      - Which routes have the highest competitive pressure between AIG and 6E
+      - Routes where AIG or 6E dominate slot allocations
+      - Extract all visible numerical data points
+
+  # ═══════════════════════════════════════════════════════════════════
+  # PHASE 2: FILTER CHANGE — Switch to Mumbai (BOM), same month
+  # ═══════════════════════════════════════════════════════════════════
+
+  # ─── 7. Change Airport filter to BOM ─────────────────────────────
+  - name: "Filter Change: DEL → BOM"
+    actions:
+      - scrollToTop: true
+      - sleep: 500
+      # Click the airport filter button (the one showing "DEL" in the sidebar)
+      - selectDropdown:
+          label: "DEL"
+          option: "BOM"
+      - sleep: 500
+      # Click "Update View" to apply the new filter
+      - tapOn: "Update View"
+      - sleep: 2000
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      The airport filter has been changed from DEL to BOM and "Update View" was clicked.
+      Describe the new filter state visible on the left sidebar.
+      Compare the new KPI cards (Total Flights, Total Seats, Busiest Bin, Avg Block Time,
+      Avg Stage Length) to the DEL values from earlier. What changed?
+
+  # ─── 8. Slot Usage by Daypart (BOM) ──────────────────────────────
+  - name: "BOM — Slot Usage by Daypart"
+    actions:
+      - scrollIntoView: "Slot Usage by Daypart"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the "Slot Usage by Daypart" chart for Mumbai (BOM).
+      Compare it to the earlier DEL daypart distribution. Focus on:
+      - How does BOM's daypart distribution differ from DEL's?
+      - Is AIG's slot share stronger or weaker at BOM compared to DEL?
+      - Which daypart shows the biggest competitive gap vs IndiGo?
+      - Extract all numerical values and percentages
+
+  # ─── 9. Daily Slot Share (Hourly) for BOM ────────────────────────
+  - name: "BOM — Daily Slot Share (Hourly)"
+    actions:
+      - scrollIntoView: "Daily Slot Share (Hourly)"
+      - waitUntilStatic: 30000
+    capture: full_page
+    prompt: |
+      Analyze the "Daily Slot Share (Hourly)" chart for BOM.
+      Compare it to the DEL hourly slot share. Focus on:
+      - AIG vs IndiGo share across each hour at BOM vs DEL
+      - Any hours where the competitive dynamic flips between the two airports
+      - Overall slot utilization differences between BOM and DEL
+
+  # ─── 10. Connected Airports from BOM ─────────────────────────────
+  - name: "BOM — Connected Airports & Destinations"
+    actions:
+      - scrollIntoView: "Connected Airports"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the "Connected Airports (Destinations)" table for BOM.
+      Compare it to the DEL destinations table. Focus on:
+      - Which destinations are unique to BOM vs shared with DEL?
+      - How does BOM's destination mix differ (more international? different domestic?)
+      - Any route gaps or competitive advantages at BOM
+
+  # ─── 11. Flight Distribution (BOM context) ──────────────────────
+  - name: "BOM — Flight Distribution vs 6E"
+    actions:
+      - scrollIntoView: "Flight Distribution across Airports"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the "Flight Distribution across Airports (vs 6E)" chart now filtered for BOM.
+      Compare flight volumes and competitive ratios to the DEL version. Focus on:
+      - Has the competitive picture changed with BOM as the focus airport?
+      - Extract all numerical values and highlight the biggest differences
+
+  # ─── 12. Slot Pressure (BOM) ─────────────────────────────────────
+  - name: "BOM — Slot Pressure vs 6E (Route Level)"
+    actions:
+      - scrollIntoView: "Pressure at slot-constrained airports"
+      - waitUntilStatic: 60000
+    capture: full_page
+    prompt: |
+      Analyze the "Pressure at slot-constrained airports" chart for BOM routes.
+      Compare it to the DEL route-level pressure. Focus on:
+      - Top 20 routes by volume from BOM
+      - Where is AIG strongest and weakest vs 6E on BOM routes?
+      - Route-level slot pressure differences between BOM and DEL
+
+# ─── Executive Summary ─────────────────────────────────────────────
+executive_summary:
+  enabled: true
+  prompt: |
+    Based on all analyses above covering Slot Analysis for BOTH Delhi (DEL) and Mumbai (BOM),
+    write a focused comparative executive briefing for the Chief Network Officer. Structure it as:
+
+    1. **KPI Comparison (DEL vs BOM)**: Compare Total Flights, Total Seats, Avg Block Time,
+       Avg Stage Length between the two hubs. Which hub is larger? Which is more efficient?
+
+    2. **Daypart & Hourly Slot Dominance**: At which hours and dayparts does AIG dominate
+       vs IndiGo at each hub? Where are the scheduling gaps?
+
+    3. **Destination Network Differences**: How do the top 15 destinations differ between
+       DEL and BOM? What does this tell us about each hub's strategic role?
+
+    4. **Route-Level Competitive Pressure**: Where does AIG face the most competitive
+       pressure from 6E at each hub? Which routes need intervention?
+
+    5. **Strategic Recommendations**: Top 3 actionable recommendations to optimize
+       AIG's slot strategy across both hubs.
+
+    Keep it under 500 words. Use specific numbers, airport codes, and percentages from the analyses.

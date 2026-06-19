@@ -1,0 +1,179 @@
+=== PARENT HTML ===
+<div class="relative"><label class="block text-xs font-medium text-gray-600 mb-1">Select Airport</label><button type="button" class="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-left flex items-center justify-between hover:bg-gray-50 transition-colors"><span class="text-gray-900">DEL</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down w-4 h-4 text-gray-500 transition-transform rotate-180"><path d="m6 9 6 6 6-6"></path></svg></button><div class="absolute z-20 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg"><div class="p-2 border-b border-gray-200"><div class="relative"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg><input type="text" placeholder="Search airports..." class="w-full pl-9 pr-3 py-2 text-sm border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-primary-500" value=""></div></div><div class="max-h-60 overflow-y-auto"><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors bg-primary-50 text-primary-700 font-semibold">DEL</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BOM</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BLR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">CCU</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">MAA</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">HYD</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">AGR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">AGX</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">AIP</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">AJL</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">AMD</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">ATQ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">AYJ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">AZH</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BBI</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BDQ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BEK</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BHJ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BHO</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BHU</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BKB</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BPM</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">BUP</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">CCJ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">CDP</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">CJB</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">CNN</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">COH</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">COK</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">CWK</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">DBR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">DED</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">DGH</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">DHM</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">DIB</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">DIU</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">DMU</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">GAU</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">GAY</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">GBI</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">GDB</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">GOI</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">GOP</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">GOX</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">GWL</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">HBX</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">HDO</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">HGI</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">HJR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">HRH</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">HSR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">HSS</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IDR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IMF</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">ISK</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXA</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXB</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXC</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXD</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXE</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXG</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXI</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXJ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXK</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXL</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXM</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXP</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXS</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXT</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXU</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXW</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXX</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXY</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">IXZ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">JAI</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">JDH</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">JGA</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">JGB</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">JLG</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">JLR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">JRG</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">JRH</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">JSA</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">KBK</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">KJB</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">KLH</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">KNU</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">KQH</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">KUU</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">LKO</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">LUH</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">MYQ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">MZS</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">NAG</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">NDC</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">PAB</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">PAT</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">PBD</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">PGH</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">PNQ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">PNY</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">PXN</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">PYB</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">PYG</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">RAJ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">RDP</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">REW</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">RJA</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">RPR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">RQY</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">RRK</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">RUP</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">SAG</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">SDW</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">SHL</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">SLV</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">SSE</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">STV</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">SXR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">SXV</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">TCR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">TEI</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">TEZ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">TIR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">TRV</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">TRZ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">UDR</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">UKE</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">VDY</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">VGA</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">VNS</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">VSV</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">VTZ</button><button type="button" class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 transition-colors text-gray-700">ZER</button></div></div></div>
+
+=== ALL BUTTONS ===
+×
+Chat Analysis
+Key Insights
+NW Analyst
+AI Widgets
+Data Upload
+Logout
+Flight Distribution
+Evolution
+Slot Analysis
+Utilisation
+Operations Interface
+Connectivity
+AIG
+All Tiers
+All Regions
+DEL
+DEL
+BOM
+BLR
+CCU
+MAA
+HYD
+AGR
+AGX
+AIP
+AJL
+AMD
+ATQ
+AYJ
+AZH
+BBI
+BDQ
+BEK
+BHJ
+BHO
+BHU
+BKB
+BPM
+BUP
+CCJ
+CDP
+CJB
+CNN
+COH
+COK
+CWK
+DBR
+DED
+DGH
+DHM
+DIB
+DIU
+DMU
+GAU
+GAY
+GBI
+GDB
+GOI
+GOP
+GOX
+GWL
+HBX
+HDO
+HGI
+HJR
+HRH
+HSR
+HSS
+IDR
+IMF
+ISK
+IXA
+IXB
+IXC
+IXD
+IXE
+IXG
+IXI
+IXJ
+IXK
+IXL
+IXM
+IXP
+IXR
+IXS
+IXT
+IXU
+IXW
+IXX
+IXY
+IXZ
+JAI
+JDH
+JGA
+JGB
+JLG
+JLR
+JRG
+JRH
+JSA
+KBK
+KJB
+KLH
+KNU
+KQH
+KUU
+LKO
+LUH
+MYQ
+MZS
+NAG
+NDC
+PAB
+PAT
+PBD
+PGH
+PNQ
+PNY
+PXN
+PYB
+PYG
+RAJ
+RDP
+REW
+RJA
+RPR
+RQY
+RRK
+RUP
+SAG
+SDW
+SHL
+SLV
+SSE
+STV
+SXR
+SXV
+TCR
+TEI
+TEZ
+TIR
+TRV
+TRZ
+UDR
+UKE
+VDY
+VGA
+VNS
+VSV
+VTZ
+ZER
+Departures
+‹
+›
+All Clusters
+All Secondary Clusters
+Update View
+Daypart Windows
+Flights
+Seats
+
+Comparing: AIG
+Table
+Table
+CSV
+Table
+CSV
+Table
+CSV
+Table
+CSV
+Table
+
+=== ALL LIs ===
