@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Node / Electron
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+ENV/
+
+# Local configuration
+.env
+.env.local
+
+# Playwright/Test outputs (keep directories via .gitkeep, but ignore contents)
+ai-report-generator/screenshots/*
+!ai-report-generator/screenshots/.gitkeep
+
+ai-report-generator/reports/*
+!ai-report-generator/reports/.gitkeep
