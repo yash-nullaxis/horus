@@ -303,7 +303,7 @@ class BrowserDriver:
             # Find the element
             locator = self._page.get_by_text(text, exact=False).first
             locator.wait_for(state="attached", timeout=10000)
-            
+
             # Use JS to scroll it to the top of the viewport
             self._page.evaluate("""
                 (text) => {
@@ -315,7 +315,7 @@ class BrowserDriver:
                     }
                 }
             """, text)
-            
+
             self._page.wait_for_timeout(500)
             # Scroll up slightly (e.g. 80px) to clear any sticky top navbars
             self._page.evaluate("window.scrollBy(0, -90)")
