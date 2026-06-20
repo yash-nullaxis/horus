@@ -1,7 +1,9 @@
+import os
+os.environ['SYSTEM_VERSION_COMPAT'] = '1'
+
 import tkinter as tk
 from tkinter import filedialog, scrolledtext
 import subprocess
-import os
 import time
 import threading
 import queue
